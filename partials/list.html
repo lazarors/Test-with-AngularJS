@@ -1,0 +1,24 @@
+<h2>Comments (<span>{{counting()}})</h2>
+
+<table>
+	<tr>
+	  <th>#</th>
+		<th>Tilte</th>
+		<th>Body</th>
+		<th>Updated at</th>
+		<th>Actions</th>
+	</tr>
+	<tr ng:repeat="comment in comments.$filter(query)" id="id{{comment.id}}">
+	  <td><a href="" ng:click="done(comment.id)">√</td>
+		<td><a ng:click="detail(comment.id)" href="">{{comment.title}}</a></td>
+		<td>{{comment.body}}</td>
+		<td>{{comment.updated | date:'dd/MM/yyyy h:mm'}}</td>
+		<td class="actions"><a href="" ng:click="edit(comment.id)" title="Edit">Edit</a> <a href="" ng:click="delete(comment.id)" title="Delete">Delete</a></td>
+	</tr>
+</table>
+
+<p ng:show="comments.length==0">
+  No comments
+</p>
+
+<a href="#/comments/add" class="btn primary">Add Comment</a>

@@ -1,0 +1,25 @@
+<h1>Add Comment</h1>
+
+<form class="form-stacked" onSubmit="return false" id="editForm">
+	<div class="clearfix">
+		<label for="title">Title:</label>
+		<div class="input">
+			<input type="text" id="title"  name="comment.title" class="xlarge">
+		</div>
+	</div>
+
+	<div class="clearfix">
+		<label for="body">Body</label>
+		<div class="input">
+			<textarea class="xxlarge" id="body" name="comment.body" rows="3"></textarea>
+		</div>
+	</div>
+
+  <hr />
+  <h1>{{comment.title}}</h1>
+  <p>{{comment.body}}</p>
+	<div>
+		<button ng:click="save()" class="btn primary">Save</button> <button ng:click="cancel()" class="btn">Cancel</button>
+	</div>
+
+</form>
